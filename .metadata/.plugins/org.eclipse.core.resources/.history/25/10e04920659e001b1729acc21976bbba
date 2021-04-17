@@ -1,0 +1,240 @@
+/*
+ ============================================================================
+ Name        : TP1.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/** \brief realiza una suma entre dos enteros
+ *
+ * \param primerNum int primer entero
+ * \param segundoNum int segundo entero que se va a sumar
+ * \return int devuelve la suma o total entre dos enteros
+ *
+ */
+int sumar(int primerNum, int segundoNum);
+
+/** \brief realiza una resta entre dos enteros
+ *
+ * \param primerNum int minuendo de la operacion
+ * \param segundoNum int sustraendo de la operacion
+ * \return int devuelve el resto o la diferencia
+ *
+ */
+int restar(int primerNum, int segundoNum);
+
+/** \brief realiza la multiplicacion entre dos enteros
+ *
+ * \param primerNum int primer factor de la operacion
+ * \param segundoNum int segundo factor de la operacion
+ * \return int devuelve el producto entre dos factores
+ *
+ */
+int multiplicar(int primerNum, int segundoNum);
+
+/** \brief realiza la division de dos enteros
+ *
+ * \param primerNum int dividendo de la operacion
+ * \param segundoNum int divisor de la operacion
+ * \return float devuelve el cociente entre el dividendo y el divisor
+ *
+ */
+float dividir(int primerNum, int segundoNum);
+
+/** \brief realiza el factorial de un entero
+ *
+ * \param n int entero a factorizar
+ * \return int devuelve el resultado de la factorizacion
+ *
+ */
+int factorial(int n);
+
+int main()
+{   char salir='n';
+    int opcion;
+    int x=0;
+    int y=0;
+    int flagOperando=0;
+    int flagOtroOp=0;
+    int flagCalculos=0;
+    int resultadoSuma;
+    int resultadoResta;
+    float resultadoDivision;
+    int resultadoMultiplicacion;
+    int resultadoFactX;
+    int resultadoFactY;
+
+    do
+    {
+        system("cls");
+        printf("Calculadora\n\n");
+        printf("1. Ingrese primer operando (A = %d)\n", x);
+        printf("2. Ingrese el segundo operando (B = %d)\n", y);
+        printf("3. Calcular operaciones\n");
+        printf("4. Mostrar resultados\n");
+        printf("5. Salir");
+
+
+        printf("\nIngrese opcion: ");
+        fflush(stdin);
+        scanf("%d", &opcion);
+
+        switch(opcion)
+        {
+            case 1:
+            printf("Ingrese el primer operando: ");
+            scanf("%d", &x);
+            flagOperando=1;
+            system("pause");
+            break;
+            case 2:
+            if(flagOperando)
+            {
+                printf("Ingrese el segundo operando: ");
+                scanf("%d", &y);
+                flagOtroOp=1;
+
+            }
+            else
+            {
+                printf("Debe ingresar el primer operando antes de ingresar el segundo\n");
+                system("pause");
+            }
+            break;
+            case 3:
+            if(flagOperando && !flagOtroOp)
+            {
+                printf("ESPERE. Solo ingreso un operando. Necesita ingresar otro\n");
+                system("pause");
+            }
+            else if (flagOperando && flagOtroOp)
+            {
+                printf("Realizando calculos...\n\n");
+                printf("a. Calculando suma (%d+%d)\n", x, y);
+                resultadoSuma=sumar(x,y);
+                printf("b. Calculando resta(%d+%d)\n", x, y);
+                resultadoResta=restar(x,y);
+                printf("c. Calculando division (%d/%d)\n", x, y);
+                resultadoDivision=dividir(x,y);
+                printf("d. Calculando multiplicacion(%d*%d)\n", x, y);
+                resultadoMultiplicacion=multiplicar(x,y);
+                printf("e. Calculando factoriales de %d y %d\n", x, y);
+                resultadoFactX= factorial(x);
+                resultadoFactY=factorial(y);
+                system("pause");
+                flagOperando=0;
+                flagOtroOp=0;
+                flagCalculos=1;
+            }
+            else
+            {
+                printf("ESPERE. No ingreso ningun operando\n");
+                system("pause");
+            }
+
+            break;
+            case 4:
+              if(flagCalculos==1)
+                {
+                    printf("a. El resultado de %d+%d es: %d\n", x, y, resultadoSuma);
+                    printf("b. El resultado de %d - %d es: %d\n", x, y, resultadoResta);
+                   if(y==0)
+                    {
+                        printf("c. No es posible dividir por cero\n");
+                    }
+                   else
+                   {
+                       printf("c. El resultado de %d / %d es: %.2f\n", x, y, resultadoDivision);
+                   }
+
+                   printf("d. “El resultado de %d * %d es: %d\n", x, y, resultadoMultiplicacion);
+                  if(x<0 || x>12)
+                  {
+                    printf("e. No es posible factorizar el numero %d\n", x);
+                  }
+                  else
+                 {
+                     printf("e.El factorial de %d es %d\n", x, resultadoFactX);
+                 }
+
+                  if(y < 0 || y > 12)
+                {
+                    printf("No se puede factorizar el numero %d\n", y);
+                }
+                else
+                {
+                    printf("El factorial de %d es %d\n", y, resultadoFactY);
+                }
+                   system("pause");
+                }
+              else
+            {
+                printf("Todavia no realizo ningun calculo...");
+                system("pause");
+            }
+
+
+            break;
+            case 5:
+                printf("Seguro que quiere salir? Si no quiere salir presione 'n' ");
+                fflush(stdin);
+                salir=getchar();
+
+
+            break;
+
+        }
+
+    }while(salir =='n');
+    return 0;
+}
+
+
+int sumar(int primerNum, int segundoNum)
+{
+    int resultado;
+
+    resultado = primerNum + segundoNum;
+    return resultado;
+}
+
+int restar(int primerNum, int segundoNum)
+{
+    int resultado;
+
+    resultado= primerNum - segundoNum;
+    return resultado;
+}
+
+float dividir(int primerNum, int segundoNum)
+{
+    float resultado;
+
+    resultado= (float) primerNum / segundoNum;
+    return resultado;
+}
+int multiplicar(int primerNum, int segundoNum)
+{
+    int resultado;
+    resultado = primerNum * segundoNum;
+    return resultado;
+}
+
+int factorial(int n)
+{
+    int fact=1;
+
+    for(int i= 1; i <= n; i++)
+    {
+        fact *= i;
+    }
+    return fact;
+}
+
+

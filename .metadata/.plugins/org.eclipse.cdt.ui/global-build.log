@@ -1,0 +1,90 @@
+00:30:56 **** Rebuild of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+gcc -o TP1.exe "src\\TP1.o" 
+Info: Nothing to build for TP1
+00:31:21 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+gcc -o TP1.exe "src\\TP1.o" 
+Info: Nothing to build for TP1
+Info: Nothing to build for TP1
+Info: Nothing to build for TP1
+Info: Nothing to build for TP1
+00:37:53 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+In file included from ..\src\TP1.c:11:0:
+..\src\TP1.c:13:8: error: expected declaration specifiers or '...' before '(' token
+ setbuf(stdout, NULL);
+        ^
+In file included from c:\mingw\include\stdlib.h:55:0,
+                 from ..\src\TP1.c:12:
+..\src\TP1.c:13:16: error: expected declaration specifiers or '...' before '(' token
+ setbuf(stdout, NULL);
+                ^
+00:39:04 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+In file included from ..\src\TP1.c:11:0:
+..\src\TP1.c:13:8: error: expected declaration specifiers or '...' before '(' token
+ setbuf(stdout, NULL);
+        ^
+In file included from c:\mingw\include\stdlib.h:55:0,
+                 from ..\src\TP1.c:12:
+..\src\TP1.c:13:16: error: expected declaration specifiers or '...' before '(' token
+ setbuf(stdout, NULL);
+                ^
+00:41:22 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+In file included from ..\src\TP1.c:11:0:
+..\src\TP1.c:13:8: error: expected declaration specifiers or '...' before '(' token
+ setbuf(stdout, NULL);
+        ^
+In file included from c:\mingw\include\stdlib.h:55:0,
+                 from ..\src\TP1.c:12:
+..\src\TP1.c:13:16: error: expected declaration specifiers or '...' before '(' token
+ setbuf(stdout, NULL);
+                ^
+00:41:29 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+gcc -o TP1.exe "src\\TP1.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:43:50 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -o TP1.exe "src\\TP1.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:45:09 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -o TP1.exe "src\\TP1.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:47:21 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -o TP1.exe "src\\TP1.o" 
+Info: Nothing to build for TP1
+Info: Nothing to build for TP1
+17:55:22 **** Rebuild of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\torrez.o" "..\\src\\torrez.c" 
+gcc -o TP1.exe "src\\TP1.o" "src\\torrez.o" 
+18:00:55 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+gcc -o TP1.exe "src\\TP1.o" "src\\torrez.o" 
+18:04:03 **** Incremental Build of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+gcc -o TP1.exe "src\\TP1.o" "src\\torrez.o" 
+Info: Nothing to build for TP1
+Info: Nothing to build for TP1
+23:02:58 **** Rebuild of configuration Debug for project TP1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1.o" "..\\src\\TP1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\torrez.o" "..\\src\\torrez.c" 
+gcc -o TP1.exe "src\\TP1.o" "src\\torrez.o" 
