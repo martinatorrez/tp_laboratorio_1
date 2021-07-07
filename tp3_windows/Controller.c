@@ -94,28 +94,20 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_addEmployee(LinkedList* pArrayListEmployee)
+int controller_addEmployee(LinkedList* pArrayListEmployee, int* idEmployee)
 {
     Employee* auxEmpleado=employee_new();
     char nombre[158];
     int horasTrabajadas;
     int sueldo;
-    int idEmpleado;
 
 
     printf("***Alta empleados**\n");
 
-    printf("Ingrese el ID del nuevo empleado: ");
-    scanf("%d", &idEmpleado);
-    while(!employee_setId(auxEmpleado,idEmpleado))
-    {
-        printf("ERROR. Reingrese el id: ");
-        scanf("%d", &idEmpleado);
-    }
-
     printf("Ingrese el nombre del empleado: ");
     fflush(stdin);
     gets(nombre);
+
     while(!employee_setNombre(auxEmpleado,nombre))
     {
         printf("ERROR. Reingrese el nombre del empleado: ");
@@ -139,6 +131,8 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
         scanf("%d",  &sueldo);
     }
 
+    auxEmpleado->id=*idEmployee;
+    *idEmployee=*idEmployee+1;
     ll_add(pArrayListEmployee,auxEmpleado);
     return 1;
 }

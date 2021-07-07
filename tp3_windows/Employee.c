@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "Employee.h"
 
 
@@ -65,7 +66,7 @@ int employee_getId(Employee* this,int* id)
 int employee_setNombre(Employee* this,char* nombre)
 {
     int todoOk=0;
-    if(this!=NULL&& nombre!=NULL &&strlen(nombre)<20)
+    if(this!=NULL&& nombre!=NULL &&(strlen(nombre)<20 && strlen(nombre)>2) && isalpha(*nombre))
     {
         strcpy(this->nombre,nombre);
         todoOk=1;
@@ -86,7 +87,7 @@ int employee_getNombre(Employee* this,char* nombre)
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
 {
     int todoOk=0;
-    if(this!=NULL&& horasTrabajadas>0)
+    if(this!=NULL && horasTrabajadas> 0)
     {
         this->horasTrabajadas=horasTrabajadas;
         todoOk=1;

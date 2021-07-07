@@ -25,7 +25,7 @@ int main()
     int option = 0;
     int idEmployee=1001;
     LinkedList* listaEmpleados = ll_newLinkedList();
-
+    int flag=0;
 
     if(listaEmpleados==NULL)
     {
@@ -40,6 +40,7 @@ int main()
                 if(controller_loadFromText("data.csv",listaEmpleados))
                 {
                   printf("Empleados cargados con exito\n");
+                  flag=1;
                   system("pause");
                 }
 
@@ -52,30 +53,61 @@ int main()
             }
            break;
             case 3:
-             buscarMayorId(listaEmpleados, &idEmployee);
-             printf("Ingrese este ID: %d\n", idEmployee);
-             if(controller_addEmployee(listaEmpleados))
+             if(controller_addEmployee(listaEmpleados, &idEmployee))
             {
                 printf("Empleado agregado con exito\n");
                 system("pause");
+                flag=2;
             }
             break;
             case 4:
-            controller_editEmployee(listaEmpleados);
-            system("pause");
+            	if(flag==0)
+            	{
+            	 printf("No puede acceder a esta opcion sin haber cargado ningun archivo o dado de alta a un empleado\n");
+            	  system("pause");
+            	}
+            	 else{
+            		 controller_editEmployee(listaEmpleados);
+            	 system("pause");
+            	 }
+
                 break;
             case 5:
-            controller_removeEmployee(listaEmpleados);
-            system("pause");
+            	if(flag==0)
+            	{
+            		printf("No puede acceder a esta opcion sin haber cargado ningun archivo o dado de alta a un empleado\n");
+            		 system("pause");
+            	}
+            	else{
+            		controller_removeEmployee(listaEmpleados);
+            		            system("pause");
+            	}
+
                 break;
             case 6:
-             controller_ListEmployee(listaEmpleados);
-             system("pause");
+            	if(flag==0)
+            	{
+            	printf("No puede acceder a esta opcion sin haber cargado ningun archivo o dado de alta a un empleado\n");
+            	 system("pause");
+            	}
+            	else{
+            		controller_ListEmployee(listaEmpleados);
+            	 system("pause");
+            	 }
                 break;
             case 7:
-            controller_sortEmployee(listaEmpleados);
-            controller_ListEmployee(listaEmpleados);
+            	if(flag==0)
+              {
+            printf("No puede acceder a esta opcion sin haber cargado ningun archivo o dado de alta a un empleado\n");
             system("pause");
+              }
+            else
+            {
+            	controller_sortEmployee(listaEmpleados);
+            	 controller_ListEmployee(listaEmpleados);
+            	 system("pause");
+            }
+
                 break;
             case 8:
             if(controller_saveAsText("data.csv", listaEmpleados))
